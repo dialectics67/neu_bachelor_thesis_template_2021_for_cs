@@ -1,12 +1,20 @@
 \ProvidesClass{csethesis}
 \LoadClass[twoside,openright,UTF8,cs4size,a4paper]{ctexbook}%要求从目录页双面，默认twoside
 \RequirePackage{pdfpages}%插入pdf文档
+\usepackage{pgfplots}
+
 
 % http://aao.neu.edu.cn/2018/1112/c2570a42991/pagem.htm 毕业设计要求
 % --------字体设置-------%
 \RequirePackage{times}
 \setmainfont{Times New Roman}%西文字体
 \songti
+\heiti
+%玄学改动 我也不知道为什么这样是对的 但是能让郑重声明和三级标题变粗体
+\setCJKfamilyfont{zhsong}[AutoFakeBold = {3.17}]{SimSun}
+\renewcommand*{\songti}{\CJKfamily{zhsong}}
+\setCJKfamilyfont{zhhei}[AutoFakeBold = {3.07}]{SimHei}
+\renewcommand*{\heiti}{\CJKfamily{zhhei}}
 % 字体大小：\zihao{x} x: 4表示四号 -4表示小四，以此类推
 
 % --------行距---------%
@@ -14,6 +22,7 @@
 \renewcommand{\baselinestretch}{1.5} %\normalsize %1.5倍行距
 
 % --------章节设置-------%
+
 \CTEXsetup[
 name={},                   % 默认{第,章}
 number={\arabic{chapter}},  %章节编号设置为阿拉伯数字格式
@@ -21,8 +30,7 @@ format={\centering\heiti\zihao{-2}},  %{\centering\zihao{-3}\heiti},
 % nameformat={},
 aftername={\quad},
 % titleformat={},
-% fixskip = true,
-beforeskip={-5ex},
+beforeskip={-5.0ex},
 afterskip={1.0ex}
 ]{chapter}
 
@@ -252,10 +260,12 @@ afterskip={1.0ex}
 \def\myref#1{\,\ref{#1}\,}
 
 % -----------表格---------------%
+
 \RequirePackage{longtable} %长表格
 \RequirePackage{booktabs}%三线表
 
 % -----------插图---------------%
+
 \RequirePackage{graphicx}
 \RequirePackage{epsfig}
 \graphicspath{{figures/}}
@@ -269,7 +279,8 @@ afterskip={1.0ex}
 \renewcommand{\topfraction}{0.85}
 \renewcommand{\bottomfraction}{0.65}
 \renewcommand{\floatpagefraction}{0.60}
-
+\usepackage{caption}
+\captionsetup{labelformat=default,labelsep=space} 
 \def\insertfixpic#1#2#3{
   \begin{figure}[ht]
     % \setcounter{figure}{2} 
@@ -292,7 +303,7 @@ afterskip={1.0ex}
   \end{figure}  
 }
 
-\RequirePackage{ccaption} %中英文题注
+%\RequirePackage{ccaption} %中英文题注
 \RequirePackage{textcomp} %摄氏度符号
 % \RequirePackage{ccmap} %pdf中文复制
 \RequirePackage{color} %gnuplot彩色文字
@@ -309,9 +320,9 @@ afterskip={1.0ex}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
 \lstset{
-  % basicstyle=\footnotesize,           % the size of the fonts that are used for the code
-  basicstyle=\footnotesize\ttfamily,
-  numbers=left,                   % where to put the line-numbers
+   basicstyle=\songti\zihao{5},           % the size of the fonts that are used for the code
+  %basicstyle=\footnotesize\ttfamily,
+  %numbers=left,                   % where to put the line-numbers
   numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
   % stepnumber=2,                   % the step between two line-numbers. If it's 1, each line 
                                   % will be numbered
@@ -320,7 +331,7 @@ afterskip={1.0ex}
   showspaces=false,               % show spaces adding particular underscores
   showstringspaces=false,         % underline spaces within strings
   showtabs=false,                 % show tabs within strings adding particular underscores
-  frame=shadowbox,                   % adds a frame around the code
+  %frame=shadowbox,                   % adds a frame around the code
   rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
   tabsize=2,                      % sets default tabsize to 2 spaces
   captionpos=b,                   % sets the caption-position to bottom
@@ -340,13 +351,13 @@ afterskip={1.0ex}
 
 
 % --------------参考文献----------%
-\bibliographystyle{unsrt} %参考文献序号按引用顺序排序
+%\bibliographystyle{unsrt} %参考文献序号按引用顺序排序
 \RequirePackage[
 numbers,
 sort&compress,
 super,
 square]{natbib} %参数代表：数字,排序与压缩,上标，方括号
-% \bibliographystyle{gbt7714-2005} %参考文献格式设为GBT7714-2005N
+%\bibliographystyle{gbt7714-2005} %参考文献格式设为GBT7714-2005N
 
 \RequirePackage[
 draft=false,
