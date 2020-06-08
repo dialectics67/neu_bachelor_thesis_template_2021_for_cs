@@ -3,6 +3,7 @@
 修改自一位学长的[neu_bachelor_thesis_template](https://github.com/Acytoo/neu_bachelor_thesis_template)。
 
 ***以下来自[neu_bachelor_thesis_template](https://github.com/Acytoo/neu_bachelor_thesis_template)。***
+
 ---------------
 ### 使用方法
 * `make`    生成论文 main.pdf；
