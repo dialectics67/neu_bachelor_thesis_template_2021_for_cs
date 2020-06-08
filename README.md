@@ -46,3 +46,9 @@
 * 非windows操作系统可能会引入新的问题
 
 * 封面格式若有明显差异，请尝试直接用学校的模板然后与本模板输出合并
+
+### 新的使用方法
+
+* 在[这里](https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/)下载texlive并安装，安装过程会很慢，请耐心等候
+
+* 在vscode的拓展中搜索并安装LaTeX Workshop即可使用
