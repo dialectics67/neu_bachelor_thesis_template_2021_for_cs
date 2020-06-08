@@ -1,15 +1,8 @@
 ## 东北大学本科毕业论文 latex模板 2019
 --------------
-修改自一位学长的[NEUBachelorThesis](https://github.com/tzaiyang/NEUBachelorThesis)，以适应学校最新的要求。
+修改自一位学长的[neu_bachelor_thesis_template](https://github.com/Acytoo/neu_bachelor_thesis_template)。
 
-设计时参考了[清华大学学位论文LaTeX模板](https://github.com/xueruini/thuthesis)
-
-使用了[GBT7714-2005参考文献标准](https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style)
-
-对上面的三个项目表示感谢。
-
-如果你觉得本模板帮助了你，可以给上面三个项目送一颗小星星
-
+***以下来自[neu_bachelor_thesis_template](https://github.com/Acytoo/neu_bachelor_thesis_template)。***
 ---------------
 ### 使用方法
 * `make`    生成论文 main.pdf；
@@ -17,11 +10,6 @@
 * `make clean`     删除中间文件（不含 main.pdf）；
 * `make cleanall`  删除中间文件和生成的论文（main.pdf）；
 ----------------
-### 下载
-
-[Release](https://github.com/Acytoo/neu_bachelor_thesis_template/releases)
-
-或者单击右上角绿色的按钮。
 
 --------------------
 ### 注意
@@ -40,3 +28,12 @@
 
 * 关于章标题的上下间距，可以参考这个issue:[设置每章的标题的上下间距在哪里可以调整？](https://github.com/ustctug/ustcthesis/issues/102)
 
+***以上来自[neu_bachelor_thesis_template](https://github.com/Acytoo/neu_bachelor_thesis_template)。***
+
+### 解决了的问题
+
+* 解决了windows上章标题上下间距不正确的问题（不保证在其他操作系统会引入新问题）
+
+* 使用无法理解的方法解决了windows下郑重声明和三级标题未加粗的问题
+
+* 修改了图表标题后有冒号的问题
