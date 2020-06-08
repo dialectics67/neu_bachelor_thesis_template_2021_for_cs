@@ -1,4 +1,4 @@
-## 东北大学本科毕业论文 latex模板 2019
+## 东北大学本科毕业论文 latex模板 2020
 --------------
 修改自一位学长的[neu_bachelor_thesis_template](https://github.com/Acytoo/neu_bachelor_thesis_template)。
 
