@@ -83,16 +83,12 @@ afterskip={1.0ex}
 
   % 左右两栏页眉，左为"东北大学本科毕业设计（论文）" 右为当前章
   \fancyhead[L]{\songti\zihao{5}东北大学本科毕业设计（论文）} % 要求宋体
-
-  \fancyhead[R]{\songti\zihao{5}  第\thechapter 章  \leftmark } % 适应学校的zz要求
+  %\fancyhead[R]{\songti\zihao{5}\leftmark} % 用于生成后文部分 使用时替换掉下面这一行代码
+  \fancyhead[R]{\songti\zihao{5}  第\thechapter 章  \leftmark } 
 
   \ifnum \thechapter=0
   \fancyhead[R]{\songti\zihao{5}目录}
-  % \else\thechapter>0
-  % \fancyhead[R]{\songti\zihao{5}  第\thechapter 章  \leftmark } % 适应学校的zz要求
   \fi
-  
-  % \fancyhead[R]{\songti\zihao{5}  \leftmark}  
 
 }
 \pagestyle{plain}
