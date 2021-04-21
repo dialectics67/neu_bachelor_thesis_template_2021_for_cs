@@ -1,16 +1,15 @@
 \ProvidesClass{csethesis}
-\LoadClass[twoside,openright,UTF8,cs4size,a4paper]{ctexbook}%要求从目录页双面，默认twoside
+\LoadClass[twoside,openright,UTF8,zihao=-4,a4paper]{ctexbook}%要求从目录页双面，默认twoside
 \RequirePackage{pdfpages}%插入pdf文档
 \usepackage{pgfplots}
+\pgfplotsset{compat=newest,compat/show suggested version=false}
 
-
-% http://aao.neu.edu.cn/2018/1112/c2570a42991/pagem.htm 毕业设计要求
 % --------字体设置-------%
 \RequirePackage{times}
-\setmainfont{Times New Roman}%西文字体
+\setmainfont{Times New Roman} %西文字体
 \songti
 \heiti
-%玄学改动 我也不知道为什么这样是对的 但是能让郑重声明和三级标题变粗体
+
 \setCJKfamilyfont{zhsong}[AutoFakeBold = {3.17}]{SimSun}
 \renewcommand*{\songti}{\CJKfamily{zhsong}}
 \setCJKfamilyfont{zhhei}[AutoFakeBold = {3.07}]{SimHei}
@@ -23,34 +22,36 @@
 
 % --------章节设置-------%
 
-\CTEXsetup[
-name={},                   % 默认{第,章}
-number={\arabic{chapter}},  %章节编号设置为阿拉伯数字格式
-format={\centering\heiti\zihao{-2}},  %{\centering\zihao{-3}\heiti},
-% nameformat={},
-aftername={\quad},
-% titleformat={},
-beforeskip={-5.0ex},
-afterskip={1.0ex}
-]{chapter}
+\ctexset { chapter = {
+  name={},                   % 默认{第,章}
+  number={\arabic{chapter}},  %章节编号设置为阿拉伯数字格式
+  format={\centering\heiti\zihao{-2}},  %{\centering\zihao{-3}\heiti},
+  % nameformat={},
+  aftername={\quad},
+  % titleformat={},
+  beforeskip={-5.0ex},
+  afterskip={1.0ex}
+} }
 
-\CTEXsetup[
-format={\Large},   %\bfseries for bold
-nameformat+={\zihao{4}},
-aftername={\ },
-titleformat={\zihao{4}\heiti},
-beforeskip={1.0ex},
-afterskip={1.0ex}
-]{section}%二级标题左对齐
+\ctexset { section = {
+  format={\Large},   %\bfseries for bold
+  nameformat+={\zihao{4}},
+  aftername={\ },
+  titleformat={\zihao{4}\heiti},
+  beforeskip={1.0ex},
+  afterskip={1.0ex}
+  %二级标题左对齐
+} }
 
-\CTEXsetup[
-format={\Large\bfseries},
-nameformat+={\zihao{-4}},
-aftername={\ },
-titleformat={\zihao{-4}\heiti},
-beforeskip={1.0ex},
-afterskip={1.0ex}
-]{subsection}%三级标题左对齐
+\ctexset { subsection = {
+  format={\Large}, % 三级标题不加粗
+  nameformat+={\zihao{-4}},
+  aftername={\ },
+  titleformat={\zihao{-4}\heiti},
+  beforeskip={1.0ex},
+  afterskip={1.0ex}
+  %三级标题左对齐
+} }
 
 % ----------段落---------%
 \RequirePackage{indentfirst}%首段段首缩进
@@ -113,7 +114,7 @@ afterskip={1.0ex}
 }
 \fancypagestyle{eabstract}{
   \fancyhead[L]{\songti\zihao{5}东北大学本科毕业设计（论文）}
-  \fancyhead[R]{\songti\zihao{5}ABSTRACT}
+  \fancyhead[R]{\songti\zihao{5}Abstract}
 }
 \fancypagestyle{listoffiguretable}{\fancyhead[R]{\songti\zihao{5}插图与表格目录}}
 
@@ -197,7 +198,7 @@ afterskip={1.0ex}
 }%结束部分定义
 
 % ------------目录------------%
-\CTEXoptions[contentsname={目 \qquad 录}]
+\ctexset { contentsname = {目 \qquad 录} }
 \RequirePackage[titles,subfigure]{tocloft}
 \renewcommand{\cftdot}{$\cdot$}
 \renewcommand{\cftdotsep}{1}%点间距
@@ -280,7 +281,7 @@ afterskip={1.0ex}
 \def\insertfixpic#1#2#3{
   \begin{figure}[ht]
     % \setcounter{figure}{2} 
-    \begin{center}     
+    \begin{center}
       \includegraphics[width=14.5cm]{#1}
       \caption{\songti\zihao{5}{#2}}
       \label{#3}
@@ -309,14 +310,14 @@ afterskip={1.0ex}
 \RequirePackage{listings}%代码排版
 \usepackage[noend]{algpseudocode}
 \usepackage{fontspec}
-% \setmonofont{Monaco}
+% \setmonofont{JetBrains Mono}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
 \lstset{
-   basicstyle=\songti\zihao{5},           % the size of the fonts that are used for the code
+  basicstyle=\songti\zihao{5},           % the size of the fonts that are used for the code
   %basicstyle=\footnotesize\ttfamily,
   %numbers=left,                   % where to put the line-numbers
   numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
