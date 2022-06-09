@@ -123,11 +123,11 @@
 % 双面打印时，全空的左页可以保留页眉与页脚，也可以不保留，下面的控制中，只能保留一个。
 
 % 首页右开的时候，全空的左页  不保留页眉 与 页脚
-\makeatletter
-\let\neu@cleardoublepage\cleardoublepage
-\renewcommand{\cleardoublepage}{
-  \clearpage{\pagestyle{empty}
-    \neu@cleardoublepage}}
+% \makeatletter
+% \let\neu@cleardoublepage\cleardoublepage
+% \renewcommand{\cleardoublepage}{
+%   \clearpage{\pagestyle{empty}
+%     \neu@cleardoublepage}}
 
 % % 首页右开的时候，全空的左页 保留页脚 不保留页眉
 % \makeatletter
@@ -140,11 +140,11 @@
 %     \neu@cleardoublepage}}
 
 % % 首页右开的时候，全空的左页  保留页眉 与 页脚
-% \makeatletter
-% \let\neu@cleardoublepage\cleardoublepage
-% \renewcommand{\cleardoublepage}{
-%   \clearpage{\pagestyle{fancy}
-%   \neu@cleardoublepage}}
+\makeatletter
+\let\neu@cleardoublepage\cleardoublepage
+\renewcommand{\cleardoublepage}{
+  \clearpage{\pagestyle{fancy}
+  \neu@cleardoublepage}}
 
 
 % ------------摘要-----------%
@@ -213,8 +213,8 @@
 \renewcommand{\cftsubsecfont}{\zihao{-4}\songti}
 % 目录项缩进
 \setlength{\cftchapindent}{0em}
-\setlength{\cftsecindent}{0em}
-\setlength{\cftsubsecindent}{1.1em}
+\setlength{\cftsecindent}{0.5em}
+\setlength{\cftsubsecindent}{1.0em}
 
 \renewcommand{\cftchapleader}{\cftdotfill{\cftchapdotsep}}
 
@@ -223,9 +223,9 @@
   \tableofcontents
 
   % \ifodd {
-  % \clearpage
-  % \phantom{s}
-  % \thispagestyle{empty}
+  \clearpage
+  \phantom{s}
+  \thispagestyle{empty}
   % }
 
   \clearpage
@@ -260,6 +260,12 @@
 
 \RequirePackage{longtable} %长表格
 \RequirePackage{booktabs}%三线表
+
+% ----------------列表------------%
+\RequirePackage{enumitem}
+\setenumerate[1]{itemsep=-\baselineskip,partopsep=0pt,parsep=\baselineskip,topsep=0pt,itemindent=1em}
+\setitemize[1]{itemsep=-\baselineskip,partopsep=0pt,parsep=\baselineskip,topsep=0pt,itemindent=1em}
+\setdescription{itemsep=-\baselineskip,partopsep=0pt,parsep=\baselineskip,topsep=0pt,itemindent=1em}
 
 % -----------插图---------------%
 
@@ -354,7 +360,7 @@ numbers,
 sort&compress,
 super,
 square]{natbib} %参数代表：数字,排序与压缩,上标，方括号
-%\bibliographystyle{gbt7714-2005} %参考文献格式设为GBT7714-2005N
+\bibliographystyle{gbt7714-2005} %参考文献格式设为GBT7714-2005N
 
 \RequirePackage[
 draft=false,
